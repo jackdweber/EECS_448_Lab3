@@ -5,9 +5,11 @@ var imgs = ["https://upload.wikimedia.org/wikipedia/commons/5/55/Atelopus_zeteki
             "http://voxpopulinews.net/wp-content/uploads/2016/03/Mink-frog.jpg"
             ]
 
+//Current count and total length of image list.
 var COUNT = 0
 var COUNT_TOTAL = imgs.length
 
+//Func to get next img in sequence.
 var next_image = function() {
     var new_count = COUNT + 1
     if(new_count >= COUNT_TOTAL){
@@ -17,6 +19,7 @@ var next_image = function() {
     COUNT = new_count
 }
 
+//Func to get previous img in list.
 var prev_image = function(){
     var new_count = COUNT - 1
     if(new_count < 0){
@@ -26,8 +29,10 @@ var prev_image = function(){
     COUNT = new_count
 }
 
+//Func to update DOM with new image.
 var new_image = function(imgsrc){
     document.getElementById('img1').src = imgsrc
 }
 
+//Load the first img on first run.
 new_image(imgs[COUNT])

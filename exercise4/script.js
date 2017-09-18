@@ -1,4 +1,6 @@
 function update_p(){
+
+    //All info from text fields
     var border_red = document.getElementById('border_red').value
     var border_green = document.getElementById('border_green').value
     var border_blue = document.getElementById('border_blue').value
@@ -7,6 +9,7 @@ function update_p(){
     var bg_green = document.getElementById('bg_green').value
     var bg_blue = document.getElementById('bg_blue').value
 
+    //Check all colors are within 0 - 255
     var colors = [border_red, border_blue, border_green, bg_blue, bg_red, bg_green]
     for (c in colors){
         if( colors[c] < 0 || colors[c] > 255){
@@ -15,8 +18,10 @@ function update_p(){
         }
     }
 
+    //Element to update
     var p = document.getElementById('p1')
 
+    //Update styles.
     p.style.border = border_width + 'px' + ' solid ' + 'rgb('+ border_red +', ' + border_green + ', ' + border_blue + ')'
     p.style.backgroundColor = 'rgb(' + bg_red + ', ' + bg_green + ', ' + bg_blue + ')'
 
